@@ -1,11 +1,9 @@
 package game;
 
-import entity.JixelEntity;
+public class Enemy extends JixampleEntity{
 
-public class Enemy extends JixelEntity{
-
-	public Enemy(String PATH, String name, int x, int y, int speed, boolean controllable) {
-		super(PATH, name, x, y, speed, controllable);
+	public Enemy(String PATH, String name, int x, int y, double friction, double acceleration, double maxSpeed) {
+		super(PATH, name, x, y, friction, acceleration, maxSpeed);
 	}
 
 	@Override
