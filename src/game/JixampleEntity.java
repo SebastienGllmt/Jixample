@@ -1,6 +1,6 @@
 package game;
 
-import entity.JixelEntity;
+import jixel.entity.JixelEntity;
 
 public class JixampleEntity extends JixelEntity {
 

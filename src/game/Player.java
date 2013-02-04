@@ -1,6 +1,6 @@
 package game;
 
-import stage.JixelGame;
+import jixel.stage.JixelGame;
 
 public class Player extends JixampleEntity {
 

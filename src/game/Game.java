@@ -1,7 +1,7 @@
 package game;
 
-import gui.JixelSprite;
-import stage.JixelGame;
+import jixel.gui.JixelSprite;
+import jixel.stage.JixelGame;
 
 public class Game extends JixelGame {
 
@@ -9,12 +9,12 @@ public class Game extends JixelGame {
 	private static final int height = width / 4 * 3; // 480
 	private static final int tileSize = 32;
 
-	Player player;
-	Enemy test;
+	private Player player;
+	private Enemy test;
 
 	public Game() {
-		super("Game", width, height, 1, tileSize, 60, 20);
-		player = new Player("res/you.png", "Player", width / 2, height / 2, 1, 2, 10);
+		super("Game", width, height, 1, tileSize, 60);
+		player = new Player("res/you.png", "Player", width / 2, height / 2, .5, 1, 5);
 		test = new Enemy("res/evil.png", "Evil", width / 2 + 5 * tileSize, height / 2, 1, 1, 5);
 		getEntityList().add(player);
 		getEntityList().add(test);
