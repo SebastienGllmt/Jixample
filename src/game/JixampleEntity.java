@@ -16,26 +16,19 @@ public class JixampleEntity extends JixelEntity {
 
 	@Override
 	public void update() {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 2; i++) {
 			if (speed[i] > 0) {
 				speed[i] -= friction;
 				if (speed[i] < 0) {
 					speed[i] = 0;
+				}else if (speed[i] > maxSpeed) {
+					speed[i] = maxSpeed;
 				}
 			} else if (speed[i] < 0) {
 				speed[i] += friction;
 				if (speed[i] > 0) {
 					speed[i] = 0;
-				}
-			}
-		}
-		for (int i = 0; i < 2; i++) {
-			if (speed[i] > 0) {
-				if (speed[i] > maxSpeed) {
-					speed[i] = maxSpeed;
-				}
-			} else if (speed[i] < 0) {
-				if (speed[i] < -maxSpeed) {
+				}else if (speed[i] < -maxSpeed) {
 					speed[i] = -maxSpeed;
 				}
 			}

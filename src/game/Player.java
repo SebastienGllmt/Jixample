@@ -17,7 +17,10 @@ public class Player extends JixampleEntity {
 			setSpeedX(getSpeedX() - getAcceleration());
 		}
 		if (JixelGame.getInput().up) {
-			//TODO Jump
+			setSpeedY(getSpeedY() - getAcceleration());
+		}
+		if (JixelGame.getInput().down) {
+			setSpeedY(getSpeedY() + getAcceleration());
 		}
 		super.update();
 	}
