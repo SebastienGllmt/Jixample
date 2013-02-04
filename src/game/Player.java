@@ -4,22 +4,22 @@ import jixel.stage.JixelGame;
 
 public class Player extends JixampleEntity {
 
-	public Player(String PATH, String name, int x, int y, double friction, double acceleration, double maxSpeed) {
-		super(PATH, name, x, y, friction, acceleration, maxSpeed);
+	public Player(String PATH, String name, int tileX, int tileY, double friction, double acceleration, double maxSpeed) {
+		super(PATH, name, tileX, tileY, friction, acceleration, maxSpeed);
 	}
 
 	@Override
 	public void update() {
-		if (JixelGame.getInput().right) {
+		if (JixelGame.getKeyInput().right) {
 			setSpeedX(getSpeedX() + getAcceleration());
 		}
-		if (JixelGame.getInput().left) {
+		if (JixelGame.getKeyInput().left) {
 			setSpeedX(getSpeedX() - getAcceleration());
 		}
-		if (JixelGame.getInput().up) {
+		if (JixelGame.getKeyInput().up) {
 			setSpeedY(getSpeedY() - getAcceleration());
 		}
-		if (JixelGame.getInput().down) {
+		if (JixelGame.getKeyInput().down) {
 			setSpeedY(getSpeedY() + getAcceleration());
 		}
 		super.update();

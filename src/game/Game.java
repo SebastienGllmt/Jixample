@@ -14,8 +14,8 @@ public class Game extends JixelGame {
 
 	public Game() {
 		super("Game", width, height, 1, tileSize, 60);
-		player = new Player("res/you.png", "Player", width / 2, height / 2, .5, 1, 5);
-		test = new Enemy("res/evil.png", "Evil", width / 2 + 5 * tileSize, height / 2, 1, 1, 5);
+		player = new Player("res/you.png", "Player", 10, 8, .5, 1, 5);
+		test = new Enemy("res/evil.png", "Evil", 14, 10, 1, 1, 5);
 		getEntityList().add(player);
 		getEntityList().add(test);
 		getScreen().lockOn(player);
@@ -32,7 +32,7 @@ public class Game extends JixelGame {
 		if (delay < 1) {
 			delay += 0.1;
 		}
-		if (getInput().key1) {
+		if (getKeyInput().key1) {
 			if (delay >= 1) {
 				delay = 0;
 				lockOnPlayer = !lockOnPlayer;
