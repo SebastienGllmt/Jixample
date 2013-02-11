@@ -19,33 +19,36 @@ public class Game extends JixelGame {
 		getEntityList().add(player);
 		getEntityList().add(test);
 		getScreen().lockOn(player);
-		getVM().newVar("name", "Sebastien");
+		String name = "Sebastien";
+		getVM().newVar("name", name);
 		getMap().setSpriteSheet(new JixelSprite("res/tiles.png"));
 		getMap().loadLevel("res/map.jixmap");
 	}
 
 	boolean lockOnPlayer = true;
-	double delay = 0;
 
+	boolean newKeyState = false;
 	@Override
 	public void update() {
-		if (delay < 1) {
-			delay += 0.1;
+		if(!getKeyInput().key1){
+			newKeyState = true;
 		}
-		if (getKeyInput().key1) {
-			if (delay >= 1) {
-				delay = 0;
-				lockOnPlayer = !lockOnPlayer;
-				if (lockOnPlayer) {
-					getScreen().lockOn(player);
-				} else {
-					getScreen().lockOn(test);
-				}
+		if (getKeyInput().key1 && newKeyState) {
+			newKeyState = false;
+			lockOnPlayer = !lockOnPlayer;
+			if (lockOnPlayer) {
+				getScreen().lockOn(player);
+			} else {
+				getScreen().lockOn(test);
 			}
 		}
 	}
 
 	public static void main(String[] args) {
 		Game game = new Game();
+	}
+
+	@Override
+	public void loadState() {
 	}
 }
