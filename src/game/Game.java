@@ -14,8 +14,8 @@ public class Game extends JixelGame {
 
 	public Game() {
 		super("Game", width, height, 1, tileSize, 60);
-		player = new Player("res/you.png", "Player", 10, 8, .5, 1, 5);
-		test = new Enemy("res/evil.png", "Evil", 14, 10, 1, 1, 5);
+		player = new Player("res/you.png", "res/you.anim", "Player", 10, 8, .5, 1, 5);
+		test = new Enemy("res/evil.png", null, "Evil", 14, 10, 1, 1, 5);
 		getEntityManager().add(player);
 		getEntityManager().add(test);
 		getScreen().getCamera().setLockedEntity(player);
