@@ -11,9 +11,11 @@ public class Player extends JixampleEntity {
 	@Override
 	public void update() {
 		if (JixelGame.getKeyInput().right) {
+			this.setFlipH(false);
 			setSpeedX(getSpeedX() + getAcceleration());
 		}
 		if (JixelGame.getKeyInput().left) {
+			this.setFlipH(true);
 			setSpeedX(getSpeedX() - getAcceleration());
 		}
 		if (JixelGame.getKeyInput().up) {
