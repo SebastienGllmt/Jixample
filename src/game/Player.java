@@ -4,32 +4,34 @@ import jixel.stage.JixelGame;
 
 public class Player extends JixampleEntity {
 
-	public Player(final String PATH, final String ANIM_PATH, String name, int tileX, int tileY, double friction, double acceleration, double maxSpeed) {
-		super(PATH, ANIM_PATH, name, tileX, tileY, friction, acceleration, maxSpeed);
+	public Player(final String imgPath, String animPath, String name, int width, int height, int x, int y, double friction, double acceleration, double maxSpeed) {
+		super(imgPath, animPath, name, width, height, x, y, friction, acceleration, maxSpeed);
 	}
 
 	@Override
 	public void update() {
-		if(JixelGame.getKeyInput().up ||
-				JixelGame.getKeyInput().down ||
-				JixelGame.getKeyInput().left ||
-				JixelGame.getKeyInput().right){
+		
+		if(JixelGame.getKeyInput().isDown("Up") ||
+				JixelGame.getKeyInput().isDown("Down") ||
+				JixelGame.getKeyInput().isDown("Left") ||
+				JixelGame.getKeyInput().isDown("Right")){
 			playAnim("Walk");
 		}else{
 			playAnim("Stand");
 		}
-		if (JixelGame.getKeyInput().right) {
+		if (JixelGame.getKeyInput().isDown("Right")) {
 			this.setFlipH(false);
 			setSpeedX(getSpeedX() + getAcceleration());
-		}else if (JixelGame.getKeyInput().left) {
+		}else if (JixelGame.getKeyInput().isDown("Left")) {
 			this.setFlipH(true);
 			setSpeedX(getSpeedX() - getAcceleration());
 		}
-		if (JixelGame.getKeyInput().up) {
+		if (JixelGame.getKeyInput().isDown("Up")) {
 			setSpeedY(getSpeedY() - getAcceleration());
-		}else if (JixelGame.getKeyInput().down) {
+		}else if (JixelGame.getKeyInput().isDown("Down")) {
 			setSpeedY(getSpeedY() + getAcceleration());
 		}
+		
 		super.update();
 	}
 

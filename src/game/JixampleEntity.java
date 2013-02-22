@@ -7,8 +7,8 @@ public class JixampleEntity extends JixelEntity {
 	private double friction, acceleration, maxSpeed;
 	private double[] speed = new double[2];
 
-	public JixampleEntity(final String PATH, final String ANIM_PATH, String name, int tileX, int tileY, double friction, double acceleration, double maxSpeed) {
-		super(PATH, ANIM_PATH, name, tileX, tileY, acceleration);
+	public JixampleEntity(String imgPath, String animPath, String name, int width, int height, int x, int y, double friction, double acceleration, double maxSpeed) {
+		super(imgPath, animPath, name, width, height, x, y, acceleration);
 		this.friction = friction;
 		this.acceleration = acceleration;
 		this.maxSpeed = maxSpeed;
